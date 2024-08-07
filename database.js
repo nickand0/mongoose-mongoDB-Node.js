@@ -71,7 +71,7 @@ const findpeople = async (NomPersonne) =>{
 
 
 //utilisation model.findone()
-const findOnebyfood =async (person) =>{
+const findOnebyname =async (person) =>{
     try{
         const pers = await Personne.findOne({name :person});
         console.log('personne trouvée',pers);
@@ -159,6 +159,7 @@ const likeBuritos = async ()=>{
         .sort({'name':1})
         .limit(2)
         .select('-age')
+        .exec()
 
         console.log("Résultats de la requête en chaîne", data)
     }catch(err){
@@ -167,12 +168,12 @@ const likeBuritos = async ()=>{
 }
 
 creatandsaveperson()
-createManyPeople([{ name: 'John', age: 25, favoriteFoods: ['gateau'] }, { name: 'Mary', age: 22, favoriteFoods: ['riz'] }])
-findpeople('John');
-findOnebyname('Mary');
-findByIDpers(new ObjectId('66a3cfb6361deee5b5f77b9f'))
-FindEditSave('66a3cfb6361deee5b5f77b9f');
-FindOneAndUpdate('Jean Etienne');
-FindOneAndDelete(new ObjectId('66a3cfb6361deee5b5f77b9e'))
-DeleteByName('Mary')
-likeBuritos();
+// createManyPeople([{ name: 'John', age: 25, favoriteFoods: ['gateau'] }, { name: 'Mary', age: 22, favoriteFoods: ['riz'] }])
+// findpeople('John');
+// findOnebyname('Mary');
+// findByIDpers(new ObjectId('66a3cfb6361deee5b5f77b9f'))
+// FindEditSave('66a3cfb6361deee5b5f77b9f');
+// FindOneAndUpdate('Jean Etienne');
+// FindOneAndDelete(new ObjectId('66a3cfb6361deee5b5f77b9e'))
+// DeleteByName('Mary')
+// likeBuritos();
